@@ -1,0 +1,21 @@
+[[claims]]
+id = "license-file"
+statement = "Repository contains an explicit license/usage notice"
+kind = "path_exists"
+path = "LICENSE*"
+
+[boundary.network]
+allow = ["api.example.com"]
+
+[boundary.process]
+spawn = false
+
+[[invariants]]
+id = "dependencies"
+statement = "Dependency manifests remain unchanged"
+kind = "dependencies_unchanged"
+
+[[invariants]]
+id = "workflows"
+statement = "Workflow definitions remain unchanged"
+kind = "workflows_unchanged"
