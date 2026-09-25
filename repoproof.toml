@@ -1,0 +1,22 @@
+[[claims]]
+id = "license-file"
+statement = "Repository contains an explicit license/usage notice"
+kind = "path_exists"
+path = "LICENSE*"
+
+[[claims]]
+id = "no-telemetry-marker"
+statement = "RepoProof source contains no telemetry SDK markers"
+kind = "text_absent"
+pattern = "(?i)segment\\.com|sentry\\.io|mixpanel|amplitude"
+include = ["src/**"]
+
+[[invariants]]
+id = "workflow-contract"
+statement = "CI workflow definitions remain unchanged"
+kind = "workflows_unchanged"
+
+[[invariants]]
+id = "dependency-contract"
+statement = "Dependency manifests remain unchanged"
+kind = "dependencies_unchanged"
