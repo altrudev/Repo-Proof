@@ -1,0 +1,16 @@
+name: "RepoProof"
+description: "Verify repository claims, boundaries, and transition invariants"
+inputs:
+  base:
+    description: "Base git ref"
+    required: true
+  head:
+    description: "Head git ref"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        python3 -m pip install "$GITHUB_ACTION_PATH"
+        repoproof --json repoproof.json diff "${{ inputs.base }}" "${{ inputs.head }}"
