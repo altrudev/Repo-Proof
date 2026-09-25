@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repoproof"
+version = "0.1.0"
+description = "Executable repository claims, boundaries, invariants, and transition proofs."
+requires-python = ">=3.11"
+authors = [{name = "Valentyn Rukhaylo / Altru.dev"}]
+readme = "README.md"
+
+[project.scripts]
+repoproof = "repoproof.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
